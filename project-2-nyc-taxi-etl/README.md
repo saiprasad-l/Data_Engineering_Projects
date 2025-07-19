@@ -5,6 +5,7 @@ This project simulates a real-world data pipeline using NYC Yellow Taxi trip rec
 ---
 
 ## 📁 Project Structure
+'''
 ├── data/
 │   ├── yellow_tripdata_2023-01.parquet
 │   └── taxi_zone_lookup.csv
@@ -17,6 +18,7 @@ This project simulates a real-world data pipeline using NYC Yellow Taxi trip rec
 │       └── trips_by_hour/
 ├── notebooks/
 │   ├── nyc_taxi_etl.ipynb
+'''
 
 ---
 
