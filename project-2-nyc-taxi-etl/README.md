@@ -98,6 +98,4 @@ This project simulates a real-world data pipeline using NYC Yellow Taxi trip rec
 ## 📌 Author
 
 **Sai Prasad L**  
-_Data Engineer | Building Data Portfolios for Big Tech_  
-
-<!-- [GitHub](https://github.com/yourusername) • [LinkedIn](https://www.linkedin.com/in/yourprofile) --!>
+_Data Engineer | Building Data Portfolios for Big Tech_ 
