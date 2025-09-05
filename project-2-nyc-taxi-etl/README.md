@@ -4,6 +4,28 @@ This project simulates a real-world data pipeline using NYC Yellow Taxi trip rec
 
 ---
 
+## 🧰 Tools & Technologies
+
+| Tool              | Purpose                             |
+|-------------------|-------------------------------------|
+| PySpark           | Distributed processing              |
+| Pandas            | Minor CSV joins and EDA             |
+| Jupyter           | Interactive notebook                |
+| GitHub Codespaces | Cloud-based Python dev environment  |
+
+
+---
+
+## 📌 Objectives
+
+- ✅ Ingest raw Parquet trip data  
+- ✅ Enrich with zone lookup (pickup/dropoff locations)  
+- ✅ Clean invalid records (e.g., negative fare, bad timestamps)  
+- ✅ Perform aggregations for insights  
+- ✅ Save all outputs in stage-wise folders  
+
+---
+
 ## 📁 Project Structure
 ```
 ├── data/
@@ -22,26 +44,14 @@ This project simulates a real-world data pipeline using NYC Yellow Taxi trip rec
 
 ---
 
-## 📌 Objectives
+## 📂 Dataset
 
-- ✅ Ingest raw Parquet trip data  
-- ✅ Enrich with zone lookup (pickup/dropoff locations)  
-- ✅ Clean invalid records (e.g., negative fare, bad timestamps)  
-- ✅ Perform aggregations for insights  
-- ✅ Save all outputs in stage-wise folders  
+- **Trip Data**:  
+  [NYC Yellow Taxi Trip Records – 2023](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)  
+  Used January `.parquet` file
 
----
-
-## 📊 Key Visualizations (Generated in Stage 3)
-
-1. **Top 10 Pickup Zones by Trip Volume**  
-   Helps identify busiest areas in NYC by volume of rides.
-
-2. **Average Fare by Borough**  
-   Useful for analyzing pricing trends across NYC regions.
-
-3. **Hourly Trip Distribution**  
-   Shows peak hours for taxi demand throughout the day.
+- **Zone Lookup**:  
+  `taxi_zone_lookup.csv` — maps location ID to borough and zone name
 
 ---
 
@@ -60,27 +70,20 @@ This project simulates a real-world data pipeline using NYC Yellow Taxi trip rec
 
 ---
 
-## 🧰 Tools & Technologies
+## 📊 Analytical Reports & Metrics (Generated in Stage 3)
 
-| Tool              | Purpose                             |
-|-------------------|-------------------------------------|
-| PySpark           | Distributed processing              |
-| Pandas            | Minor CSV joins and EDA             |
-| GitHub Codespaces | Cloud-based Python dev environment  |
-| NYC TLC Data      | Source of real-world taxi data      |
+1. **Top 10 Pickup Zones by Trip Volume**  
+   Helps identify busiest areas in NYC by volume of rides.
 
----
+2. **Average Fare by Borough**  
+   Useful for analyzing pricing trends across NYC regions.
 
-## 📂 Dataset
+3. **Hourly Trip Distribution**  
+   Shows peak hours for taxi demand throughout the day.
 
-- **Trip Data**:  
-  [NYC Yellow Taxi Trip Records – 2023](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)  
-  Used January `.parquet` file
-
-- **Zone Lookup**:  
-  `taxi_zone_lookup.csv` — maps location ID to borough and zone name
 
 ---
+
 
 ## 🚀 Next Steps
 
@@ -95,5 +98,4 @@ This project simulates a real-world data pipeline using NYC Yellow Taxi trip rec
 ## 📌 Author
 
 **Sai Prasad L**  
-_Data Engineer | Building Data Portfolios for Big Tech_  
-[GitHub](https://github.com/yourusername) • [LinkedIn](https://www.linkedin.com/in/yourprofile)
+_Data Engineer | Building Data Portfolios for Big Tech_ 
