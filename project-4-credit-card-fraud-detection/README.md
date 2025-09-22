@@ -130,14 +130,29 @@ We build a **Lakehouse** with Bronze → Silver → Gold Delta tables, perform f
 
 ```mermaid
 flowchart LR
-  A[Raw CSV (creditcard.csv)] -->|ingest| B[Bronze (Delta path)]
-  B -->|clean & transform| C[Silver (table)]
-  C -->|feature engineering| D[Gold (table) - ML-ready]
-  D -->|train + evaluate → log| E[MLflow (model & metrics)]
-  E -->|batch predictions| F[Gold Predictions (Delta/table)]
+  A["Raw CSV (creditcard.csv)"] -->|ingest| B["Bronze (Delta path)"]
+  B -->|clean & transform| C["Silver (table)"]
+  C -->|feature engineering| D["Gold (table) - ML-ready"]
+  D -->|train + evaluate -> log| E["MLflow (model & metrics)"]
+  E -->|batch predictions| F["Gold Predictions (Delta/table)"]
+
   style A fill:#f9f,stroke:#333,stroke-width:1px
   style B fill:#fffae6,stroke:#333
   style C fill:#fff0f0,stroke:#333
   style D fill:#e6fff2,stroke:#333
   style E fill:#e6f0ff,stroke:#333
   style F fill:#fff,stroke:#333
+
+---
+## 🚀 Next Steps & Enhancements
+- Add Great Expectations checks in Silver and Gold, export Data Docs to the repo.
+- Register promoted models in MLflow Model Registry (Stage → Prod).
+- Build a monitoring dashboard on top of gold_predictions (Databricks SQL / Power BI).
+- Add CI/CD to test notebooks and deploy Job definitions (GitHub Actions).
+
+---
+
+## 📌 Author
+
+**Sai Prasad L**  
+_Data Engineer | Building Data Portfolios for Big Tech_ 
