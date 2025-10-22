@@ -1,0 +1,30 @@
+resources:
+  jobs:
+    Credit_Card_Fraud:
+      name: Credit Card Fraud
+      tasks:
+        - task_key: Bronze
+          notebook_task:
+            notebook_path: /Workspace/Users/prasadl@udel.edu/Project_4_Bronze
+            source: WORKSPACE
+        - task_key: Silver
+          depends_on:
+            - task_key: Bronze
+          notebook_task:
+            notebook_path: /Workspace/Users/prasadl@udel.edu/Project_4_Silver
+            source: WORKSPACE
+        - task_key: Gold
+          depends_on:
+            - task_key: Silver
+          notebook_task:
+            notebook_path: /Workspace/Users/prasadl@udel.edu/Project_4_Gold
+            source: WORKSPACE
+        - task_key: ML_Flow
+          depends_on:
+            - task_key: Gold
+          notebook_task:
+            notebook_path: /Workspace/Users/prasadl@udel.edu/project_4_MLflow
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: STANDARD
