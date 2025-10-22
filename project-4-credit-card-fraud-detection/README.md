@@ -5,7 +5,7 @@ We build a **Lakehouse** with Bronze → Silver → Gold Delta tables, perform f
 
 ---
 
-## 🧰 Tools & Technologies
+##  Tools & Technologies
 
 | Tool              | Purpose                                         |
 |-------------------|-------------------------------------------------|
@@ -21,20 +21,20 @@ We build a **Lakehouse** with Bronze → Silver → Gold Delta tables, perform f
 
 ## 📌 Objectives
 
-- ✅ Ingest raw credit card transactions CSV into **Bronze Delta**  
-- ✅ Clean, cast types, and enrich features in **Silver**  
-- ✅ Create **Gold ML-ready table** with engineered features:  
+- Ingest raw credit card transactions CSV into **Bronze Delta**  
+- Clean, cast types, and enrich features in **Silver**  
+- Create **Gold ML-ready table** with engineered features:  
   - PCA anonymized features (`V1–V28`)  
   - `log_amount`, `amount_zscore`, `time_zscore`  
-- ✅ Handle extreme class imbalance (fraud ≈ 0.17%) using class weighting (or SMOTE)  
-- ✅ Train fraud detection model (Logistic Regression & Random Forest)  
-- ✅ Track model metrics (ROC-AUC, PR-AUC) in **MLflow**  
-- ✅ Write predictions back to **Gold predictions** (Delta)  
-- ✅ Orchestrate end-to-end pipeline with Databricks Jobs  
+- Handle extreme class imbalance (fraud ≈ 0.17%) using class weighting (or SMOTE)  
+- Train fraud detection model (Logistic Regression & Random Forest)  
+- Track model metrics (ROC-AUC, PR-AUC) in **MLflow**  
+- Write predictions back to **Gold predictions** (Delta)  
+- Orchestrate end-to-end pipeline with Databricks Jobs  
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 ```
 ├── data/
 │   └── creditcard.csv
@@ -51,7 +51,7 @@ We build a **Lakehouse** with Bronze → Silver → Gold Delta tables, perform f
 
 ---
 
-## 📂 Dataset
+##  Dataset
 
 - **Credit Card Transactions (Kaggle)**  
   [Credit Card Fraud Detection Dataset (mlg-ulb / creditcard.csv)](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)  
@@ -59,7 +59,7 @@ We build a **Lakehouse** with Bronze → Silver → Gold Delta tables, perform f
 
 ---
 
-## 🧹 Data Cleaning & Feature Engineering
+## Data Cleaning & Feature Engineering
 
 ### Silver
 - Cast `Class` to integer  
@@ -78,7 +78,7 @@ We build a **Lakehouse** with Bronze → Silver → Gold Delta tables, perform f
 
 ---
 
-## 🤖 Machine Learning & MLflow
+##  Machine Learning & MLflow
 
 - Convert Gold to Pandas (small dataset / demo) or use in-Spark approaches for production
 - Handle imbalance:
@@ -101,7 +101,7 @@ We build a **Lakehouse** with Bronze → Silver → Gold Delta tables, perform f
 
 ---
 
-## 🔍 Observability & Orchestration
+##  Observability & Orchestration
 
 - **Databricks Jobs**: chain notebooks as tasks — `01_bronze` → `02_silver` → `03_gold` → `04_ml`  
 - **Spark UI**: inspect ETL stages, shuffle, executor metrics  
@@ -110,7 +110,7 @@ We build a **Lakehouse** with Bronze → Silver → Gold Delta tables, perform f
 
 ---
 
-## ▶️ Run / Quickstart (Databricks CE)
+##  Run / Quickstart (Databricks CE)
 
 1. Upload `creditcard.csv` to DBFS (Data → Add Data) or place in `dbfs:/Volumes/...`  
 2. Create a Job cluster or use an interactive cluster. Ensure required Python libs installed:  
@@ -126,7 +126,7 @@ We build a **Lakehouse** with Bronze → Silver → Gold Delta tables, perform f
 
 ---
 
-## 🖼 Architecture Diagram
+##  Architecture Diagram
 
 ```mermaid
 flowchart LR
@@ -144,7 +144,7 @@ flowchart LR
   style F fill:#fff,stroke:#333
 ```
 ---
-## 🚀 Next Steps & Enhancements
+##  Next Steps & Enhancements
 - Add Great Expectations checks in Silver and Gold, export Data Docs to the repo.
 - Register promoted models in MLflow Model Registry (Stage → Prod).
 - Build a monitoring dashboard on top of gold_predictions (Databricks SQL / Power BI).
@@ -152,7 +152,7 @@ flowchart LR
 
 ---
 
-## 📌 Author
+##  Author
 
 **Sai Prasad L**  
 _Data Engineer | Building Data Portfolios for Big Tech_
