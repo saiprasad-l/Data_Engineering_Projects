@@ -19,7 +19,7 @@ We build a **Lakehouse** with Bronze → Silver → Gold Delta tables, perform f
 
 ---
 
-## 📌 Objectives
+##  Objectives
 
 - Ingest raw credit card transactions CSV into **Bronze Delta**  
 - Clean, cast types, and enrich features in **Silver**  
