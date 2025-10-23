@@ -55,19 +55,25 @@ This pipeline tracks YouTube channel statistics (views, subscribers, video count
 channel_id (str), viewCount (str), subscriberCount (str), videoCount (str), ts (epoch seconds)
 
 **Operations:**
-     - Cast to numeric types:
+- Cast to numeric types:
 viewCount → BIGINT, subscriberCount → BIGINT, videoCount → BIGINT
-     - Normalize timestamp: keep ts as BIGINT (optionally convert to event_time TIMESTAMP)
-     - Drop obvious nulls and duplicates
-     - Add dt partition as YYYYMMDD derived from run context or timestamp
-     - Write Parquet partitioned by dt
+- Normalize timestamp: keep ts as BIGINT (optionally convert to event_time TIMESTAMP)
+- Drop obvious nulls and duplicates
+- Add dt partition as YYYYMMDD derived from run context or timestamp
+- Write Parquet partitioned by dt
 
 **Silver schema (effective):**
+
 channel_id STRING,
+
 viewCount BIGINT,
+
 subscriberCount BIGINT,
+
 videoCount BIGINT,
+
 ts BIGINT,
+
 dt STRING     -- partition
 
 ### 2) Silver → Gold (Glue: silver_to_gold.py)
@@ -75,21 +81,29 @@ dt STRING     -- partition
 **Goal:** Compute daily metrics per channel (end-of-day snapshot + growth).
 
 **Aggregations (per channel_id, dt):**
-     - end_views = max(viewCount)
-     - start_views = min(viewCount)
-     - end_subs = max(subscriberCount)
-     - start_subs = min(subscriberCount)
-     - views_gained = end_views - start_views
-     - subs_gained = end_subs - start_subs
+- end_views = max(viewCount)
+- start_views = min(viewCount)
+- end_subs = max(subscriberCount)
+- start_subs = min(subscriberCount)
+- views_gained = end_views - start_views
+- subs_gained = end_subs - start_subs
 
 **Gold schema:**
+
 channel_id STRING,
+
 end_views BIGINT,
+
 start_views BIGINT,
+
 end_subs BIGINT,
+
 start_subs BIGINT,
+
 views_gained BIGINT,
+
 subs_gained BIGINT,
+
 dt STRING     -- partition
 
 ---
