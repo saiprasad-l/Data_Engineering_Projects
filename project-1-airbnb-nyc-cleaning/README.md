@@ -4,7 +4,7 @@ This project focuses on exploring and cleaning the [Airbnb NYC 2019 dataset](htt
 
 ---
 
-## 🧰 Tools & Technologies
+## Tools & Technologies
 
 | Tool        | Purpose                        |
 |-------------|--------------------------------|
@@ -16,16 +16,16 @@ This project focuses on exploring and cleaning the [Airbnb NYC 2019 dataset](htt
 
 ---
 
-## 📌 Objectives
+## Objectives
 
-- ✅ Load and inspect the raw Airbnb NYC dataset
-- ✅ Handle missing values and drop irrelevant columns
-- ✅ Generate basic insights and summary statistics
-- ✅ Visualize trends using `matplotlib` and `pandas`
+- Load and inspect the raw Airbnb NYC dataset
+- Handle missing values and drop irrelevant columns
+- Generate basic insights and summary statistics
+- Visualize trends using `matplotlib` and `pandas`
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 ```
 ├── data/
 │   ├── AB_NYC_2019.csv
@@ -36,7 +36,7 @@ This project focuses on exploring and cleaning the [Airbnb NYC 2019 dataset](htt
 
 ---
 
-## 📂 Dataset
+## Dataset
 
 - Source: [Kaggle – Airbnb NYC 2019](https://www.kaggle.com/datasets/dgomonov/new-york-city-airbnb-open-data)
 - Records: ~49,000
@@ -44,7 +44,7 @@ This project focuses on exploring and cleaning the [Airbnb NYC 2019 dataset](htt
 
 ---
 
-## 🧹 Data Cleaning Steps
+## Data Cleaning Steps
 
 - Removed columns: `id`, `host_name`
 - Filled null values in `reviews_per_month` with `0`
@@ -52,7 +52,7 @@ This project focuses on exploring and cleaning the [Airbnb NYC 2019 dataset](htt
 
 ---
 
-## 📊 Key Visualizations
+## Key Visualizations
 
 1. **Average Price by Borough**  
    Compare the average price per listing across different NYC boroughs.
@@ -68,7 +68,7 @@ This project focuses on exploring and cleaning the [Airbnb NYC 2019 dataset](htt
 
 ---
 
-## 🚀 Next Steps
+## Next Steps
 
 - Build a PySpark version of the same pipeline
 - Extend this into a data pipeline: raw data → clean → store as Parquet → load to Snowflake
@@ -76,9 +76,9 @@ This project focuses on exploring and cleaning the [Airbnb NYC 2019 dataset](htt
 
 ---
 
-## 📌 Author
+## Author
 
 **Sai Prasad L**  
-_Data Engineer | Building Data Portfolios for Big Tech_  
+_Data Engineer | Building Data Projects_  
 
 ---
