@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  zookeeper:
+    image: bitnami/zookeeper:3
+    container_name: zookeeper
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: bitnami/kafka:3
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"   # external access (EC2 private IP)
+      - "29092:29092" # internal access (Docker network)
+    environment:
+      - KAFKA_BROKER_ID=1
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+
+      # Define listeners
+      - KAFKA_CFG_LISTENERS=INTERNAL://0.0.0.0:29092,EXTERNAL://0.0.0.0:9092
+
+      # Advertise private EC2 IP for external, container name for internal
+      - KAFKA_CFG_ADVERTISED_LISTENERS=INTERNAL://kafka:29092,EXTERNAL://172.31.38.162:9092
+
+      # Map listener names to security protocols
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+
+      # Tell brokers to use INTERNAL for inter-broker comms
+      - KAFKA_INTER_BROKER_LISTENER_NAME=INTERNAL
+
+      - ALLOW_PLAINTEXT_LISTENER=yes
