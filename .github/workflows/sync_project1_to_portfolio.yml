@@ -21,7 +21,7 @@ jobs:
       - name: Checkout portfolio repo
         uses: actions/checkout@v4
         with:
-          repository: saiprasad-l/data_engineering_portfolio
+          repository: saiprasad-l/data-engineering-portfolio
           token: ${{ secrets.PORTFOLIO_REPO_TOKEN }}
           path: portfolio
 
