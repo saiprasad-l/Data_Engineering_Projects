@@ -17,7 +17,7 @@ This project focuses on exploring and cleaning the [Airbnb NYC 2019 dataset](htt
 ---
 ## Architecture Diagram
 
-![Airbnb NYC Data Cleaning Architecture](./workspaces/Data_Engineering_Projects/project-1-airbnb-nyc-cleaning/Data Cleaning & EDA Architecture Diagram.png)
+![Airbnb NYC Data Cleaning Architecture](./Data_Cleaning_&_EDA_Architecture_Diagram.png)
 
 
 ---
